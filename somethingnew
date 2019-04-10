@@ -1,0 +1,36 @@
+<?php
+
+Class ReferanceClassA 
+{
+function abc(){
+    
+$treeArrayy = array('c1#c2#6','c2#c3#10','c2#c4#8','c4#c5#2','c4#c6#2','c1#c6#2');
+
+foreach($treeArrayy as $treeArrayx){
+    $innerArrayy = explode('#', $treeArrayx);
+  
+        $res[$innerArrayy[0]][] = $innerArrayy[1];
+        $res[$innerArrayy[1]][] = $innerArrayy[0];
+//        echo '<pre>';
+//        print_r($res);
+//        echo '</pre>';
+        
+       // die();
+    }
+    return $aa = array_unique(array_merge($res,$res), SORT_REGULAR);
+//       echo '<pre>';
+//       print_r($aa);
+     //  die();
+}}
+$ref = new ReferanceClassA();
+echo '<pre>';
+print_r($ref->abc());
+echo '</pre>';
+
+
+
+
+?>
+
+
+
